@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/cvOverview">
+
+    <fragment
+        android:id="@+id/cvOverview"
+        android:name="io.github.zeyomir.cv.overview.CvOverviewFragment"
+        android:label="@string/overview"
+        tools:layout="@layout/fragment_cv_overview">
+        <action
+            android:id="@+id/action_cvOverview_to_cvCertificates"
+            app:destination="@id/cvCertificates"
+            app:enterAnim="@anim/screen_anim_in"
+            app:exitAnim="@anim/screen_anim_out"
+            app:popEnterAnim="@anim/screen_anim_in"
+            app:popExitAnim="@anim/screen_anim_out" />
+        <action
+            android:id="@+id/action_cvOverview_to_cvExperience"
+            app:destination="@id/cvExperience"
+            app:enterAnim="@anim/screen_anim_in"
+            app:exitAnim="@anim/screen_anim_out"
+            app:popEnterAnim="@anim/screen_anim_in"
+            app:popExitAnim="@anim/screen_anim_out" />
+        <action
+            android:id="@+id/action_cvOverview_to_cvEducation"
+            app:destination="@id/cvEducation"
+            app:enterAnim="@anim/screen_anim_in"
+            app:exitAnim="@anim/screen_anim_out"
+            app:popEnterAnim="@anim/screen_anim_in"
+            app:popExitAnim="@anim/screen_anim_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cvCertificates"
+        android:name="io.github.zeyomir.cv.overview.certificates.CvCertificatesFragment"
+        android:label="@string/certificates"
+        tools:layout="@layout/fragment_cv_certificates" />
+
+    <fragment
+        android:id="@+id/cvExperience"
+        android:name="io.github.zeyomir.cv.overview.experience.CvExperienceFragment"
+        android:label="@string/experience"
+        tools:layout="@layout/fragment_cv_experience" />
+
+    <fragment
+        android:id="@+id/cvEducation"
+        android:name="io.github.zeyomir.cv.overview.education.CvEducationFragment"
+        android:label="@string/education"
+        tools:layout="@layout/fragment_cv_education" />
+
+</navigation>

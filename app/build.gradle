@@ -1,0 +1,77 @@
+apply plugin: Plugins.android.androidApplication
+
+apply plugin: Plugins.android.kotlinAndroid
+apply plugin: Plugins.android.kotlinAndroidExtensions
+apply plugin: Plugins.kotlinKapt
+
+android {
+    defaultConfig {
+        applicationId "io.github.zeyomir.cv"
+        versionCode Apps.versionCode
+        versionName Apps.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField 'String', 'RETROFIT_LOG_LEVEL', '"BODY"'
+            buildConfigField 'String', 'API_BASE_URL', '"http://example.com"'
+            versionNameSuffix '-mock'
+            applicationIdSuffix '.mock'
+        }
+        release {
+            minifyEnabled false
+            buildConfigField 'String', 'RETROFIT_LOG_LEVEL', '"NONE"'
+            buildConfigField 'String', 'API_BASE_URL', '"https://gist.githubusercontent.com/"'
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    coreLibraryDesugaring Libs.desugaring
+
+    implementation Libs.kotlin
+
+    implementation Libs.androidX.core
+    implementation Libs.androidX.appcompat
+    implementation Libs.androidX.navigationUI
+    implementation Libs.androidX.navigationFragment
+    implementation Libs.androidX.constraintLayout
+    implementation Libs.androidX.swipeRefreshLayout
+    implementation Libs.androidFlexbox
+
+    implementation Libs.timber
+    implementation Libs.glide
+    implementation Libs.emailIntentBuilder
+
+    implementation Libs.bindingCollectionAdapter
+    implementation Libs.bindingCollectionAdapterRecyclerView
+
+    implementation Libs.okHttp.core
+    implementation Libs.okHttp.loggingInterceptor
+
+    implementation Libs.moshi
+    kapt Libs.moshiCodeGen
+
+    implementation Libs.retrofit.core
+    implementation Libs.retrofit.mock
+    implementation Libs.retrofit.rxJavaAdapter
+    implementation Libs.retrofit.moshiConverter
+
+    implementation Libs.rxJava
+    implementation Libs.rxAndroid
+
+    implementation Libs.dagger.core
+    kapt Libs.dagger.compiler
+
+    testImplementation TestLibs.junit
+    testImplementation TestLibs.mockk
+}

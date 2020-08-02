@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.github.zeyomir.cv.overview.items.CvEducationItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BodyTextBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.institution}"
+            tools:text="MIT" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BodyTextRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.degreeAndCourse}"
+            tools:text="Master's Degree in Computer Science" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BodyTextSmallRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.years}"
+            android:textColor="@color/darkGrey"
+            tools:text="2017 - now" />
+    </LinearLayout>
+</layout>

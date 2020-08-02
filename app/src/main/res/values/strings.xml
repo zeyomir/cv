@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CV Miroslaw Zawisza</string>
+    <string name="nothing_here">Nothing here yet!</string>
+    <string name="seeMore">See more…</string>
+
+    <string name="overview">Overview</string>
+    <string name="keywords">Keywords</string>
+
+    <string name="experience">Experience</string>
+    <string name="till">%1$s - %2$s</string>
+    <string name="tillNow">%s - now</string>
+    <string name="technologyUsed">Technology used: %s</string>
+
+    <string name="education">Education</string>
+    <string name="degreeAndCourse">%1$s in %2$s</string>
+
+    <string name="certificates">Certificates</string>
+    <string name="issuedText">Issued by %s in %d</string>
+
+    <string name="languages">Languages</string>
+    <string name="interests">Interests</string>
+    <string name="links">Links</string>
+
+    <string name="somethingWentWrong">Ooops… Something went wrong!</string>
+    <string name="tryAgain">Try again</string>
+</resources>

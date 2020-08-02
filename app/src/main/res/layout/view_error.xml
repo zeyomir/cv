@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.github.zeyomir.cv.base.ui.ErrorViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/margin32"
+        android:paddingEnd="@dimen/margin32"
+        android:visibility="@{viewModel.show}"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Headline2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/somethingWentWrong" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BodyTextSmallRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin24"
+            android:background="@drawable/button_outline"
+            android:backgroundTint="@color/blue"
+            android:drawableEnd="@drawable/ic_refresh"
+            android:drawablePadding="@dimen/margin8"
+            android:drawableTint="@color/blue"
+            android:gravity="center"
+            android:onClick="@{()->viewModel.command()}"
+            android:paddingStart="@dimen/margin24"
+            android:paddingTop="@dimen/margin8"
+            android:paddingEnd="@dimen/margin24"
+            android:paddingBottom="@dimen/margin8"
+            android:text="@string/tryAgain"
+            android:textColor="@color/blue" />
+    </LinearLayout>
+</layout>

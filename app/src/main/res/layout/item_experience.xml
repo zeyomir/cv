@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.github.zeyomir.cv.overview.items.CvExperienceItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/companyLogoSize"
+            android:layout_height="@dimen/companyLogoSize"
+            android:importantForAccessibility="no"
+            app:imageUrl="@{viewModel.companyLogo}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_placeholder_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/role"
+            style="@style/BodyTextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin8"
+            android:text="@{viewModel.role}"
+            app:layout_constraintStart_toEndOf="@id/logo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Android Developer" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/company"
+            style="@style/BodyTextRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.companyName}"
+            app:layout_constraintStart_toStartOf="@id/role"
+            app:layout_constraintTop_toBottomOf="@id/role"
+            tools:text="HSBC" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/years"
+
+            style="@style/BodyTextSmallRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.years}"
+            android:textColor="@color/darkGrey"
+            app:layout_constraintStart_toStartOf="@id/role"
+            app:layout_constraintTop_toBottomOf="@id/company"
+            tools:text="2020 - now" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            style="@style/BodyTextRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin8"
+            android:text="@{viewModel.description}"
+            app:layout_constraintTop_toBottomOf="@id/logo"
+            tools:text="Here comes the description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/techStack"
+            style="@style/BodyTextRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin8"
+            android:text="@{viewModel.usedTech}"
+            android:textColor="@color/darkGrey"
+            android:textStyle="italic"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            tools:text="@string/technologyUsed" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
